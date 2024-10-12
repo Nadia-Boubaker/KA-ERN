@@ -139,7 +139,7 @@ for fold, (train_idx, val_idx) in enumerate(kf.split(train_entities)):
     criterion = nn.BCELoss()  # Modified loss function to Binary Cross-Entropy Loss
 
     # Training loop
-    num_epochs = 2
+    num_epochs = 10
     for epoch in range(num_epochs):
         model.train()
         total_loss = 0
