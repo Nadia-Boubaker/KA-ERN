@@ -174,7 +174,7 @@ for fold, (train_idx, val_idx) in enumerate(kf.split(train_entities)):
             true_labels.extend(labels.cpu().numpy())
 
     # Convert to binary classification
-    threshold = 0.6
+    threshold = 0.7
     binary_predictions = [1 if pred >= threshold else 0 for pred in predictions]
     binary_true_labels = [1 if label >= threshold else 0 for label in true_labels]
 
