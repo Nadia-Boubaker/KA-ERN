@@ -106,7 +106,7 @@ test_relations = X_test[:, entity_embeddings.shape[1]:]
 
 # Initialize model parameters
 input_dim = entity_embeddings.shape[1]
-hidden_dim = 256
+hidden_dim = 128
 num_layers = 3
 output_dim = 1
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -199,7 +199,7 @@ print(f"Cross-Validated AUC-ROC: {np.mean(auc_rocs):.4f}")
 
 # Evaluation on the test set
 test_dataset = EmbeddingsDataset(test_entities, test_relations, y_test)
-test_dataloader = DataLoader(test_dataset, batch_size=256, shuffle=False)
+test_dataloader = DataLoader(test_dataset, batch_size=64, shuffle=False)
 
 # Test set evaluation
 model.eval()
